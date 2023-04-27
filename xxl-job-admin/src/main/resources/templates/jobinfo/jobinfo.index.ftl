@@ -139,10 +139,13 @@
                             <textarea class="textarea form-control" name="alarmEmail" placeholder="${I18n.jobinfo_field_alarmemail_placeholder}" maxlength="255" style="height: 60px;line-height: normal"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
+              <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_groupFlag}<font color="black">*</font></label>
                         <div class="col-sm-10">
-                            <textarea class="textarea form-control" name="groupFlag" placeholder="${I18n.jobinfo_field_groupFlag_placeholder}" maxlength="512" style="height: 30px;line-height: normal"></textarea>
+                            <select id="groupFlag" name="groupFlag" class="form-control">
+                                <option value="FALSE" <#if jobInfo.groupFlag == 'FALSE'>selected</#if> >人员模式</option>
+                                <option value="TRUE" <#if jobInfo.groupFlag == 'TRUE'>selected</#if> >分组模式</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -402,12 +405,17 @@ exit 0
                         </div>
                     </div>
 
-                    <div class="form-group">
+              <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_groupFlag}<font color="black">*</font></label>
                         <div class="col-sm-10">
-                            <textarea class="textarea form-control" name="groupFlag" placeholder="${I18n.jobinfo_field_groupFlag_placeholder}" maxlength="512" style="height: 30px;line-height: normal"></textarea>
-
+                            <select id="groupFlag" name="groupFlag" class="form-control">
+                                <option value="FALSE" <#if jobInfo.groupFlag == 'FALSE'>selected</#if> >人员模式</option>
+                                <option value="TRUE" <#if jobInfo.groupFlag == 'TRUE'>selected</#if> >分组模式</option>
+                            </select>
                         </div>
+                    </div>
+		    
+		    
                     </div>
                     <div class="form-group">
                         <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarmsms}<font color="black">*</font></label>
